@@ -24,3 +24,22 @@ app.whenReady().then(createWindow);
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
+
+
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("musicControl");
+
+  if (music.paused) {
+    music.play();
+    btn.innerHTML = "🔊";
+  } else {
+    music.pause();
+    btn.innerHTML = "🔇";
+  }
+}
+
+window.addEventListener("click", () => {
+  const music = document.getElementById("bgMusic");
+  music.play();
+}, { once: true });

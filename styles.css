@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #C8A2C8, #6A0DAD);
+}
+
+/* biar responsive */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  width: 90%;
+  max-width: 220px;
+  padding: 1rem;
+
+  background-image: url("assets/outer-frame-bg.png");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 20px;
+
+
+}
+
+/* calendar scaling */
+#calendar {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+/* teks auto scale */
+#day {
+  font-size: clamp(4rem, 10vw, 6rem);
+}
+
+#month {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+button,
+input,
+textarea,
+select {
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+
+.title {
+
+    display: flex;
+    width: 157px;
+    aspect-ratio: 157/27;
+    padding: 0.25rem 0.625rem;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6.25rem;
+    border: 1px solid #C079FF;
+    background: rgba(210, 164, 255, 0.40);
+
+    color: var(--white, #FFF);
+
+    /* text styling */
+    font-family: Pixeboy;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+#calendar { 
+    display: flex;
+    width: 11.25rem;
+    height: 10.0625rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    background-image: url("assets/inner-frame-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
+#day {
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: var(--mid-purple, #B58CD9);
+    font-family: Pixeboy;
+    font-size: 8.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem; 
+    letter-spacing: 0.45rem;
+
+    display: flex;
+    width: 11.25rem;
+    height: 4.4375rem;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#month {
+
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #B58CD9;
+    font-family: Pixeboy;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem; 
+    letter-spacing: 0.3rem;
+
+    width: 8.125rem;
+
+}
+
+.flower {
+  position: fixed;
+  font-size: 20px;
+  pointer-events: none;
+  animation: bloom 2s ease-out forwards;
+}
+
+@keyframes bloom {
+  0% {
+    transform: scale(0.5) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translateY(-100px);
+    opacity: 0;
+  }
+}
+
+.cta {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.love-text {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+#openBtn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #6A0DAD;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#openBtn:hover {
+  transform: scale(1.1);
+  background: #f3e5f5;
+  box-shadow: 0 0 10px #C8A2C8;
+}
+
+.cta {
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
